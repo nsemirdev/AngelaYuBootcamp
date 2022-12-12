@@ -26,43 +26,57 @@
                                 <rect key="frame" x="20" y="48" width="374" height="814"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score : 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztj-o3-VRZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="71.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="53.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSI-li-mhO">
-                                        <rect key="frame" x="0.0" y="81.5" width="374" height="532.5"/>
+                                        <rect key="frame" x="0.0" y="63.5" width="374" height="460.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVw-Hl-IRe">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2Y-im-XuK">
+                                        <rect key="frame" x="0.0" y="534" width="374" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="sOs-v7-rXa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="1" backgroundImage="Rectangle">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uwT-Be-nu3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8P-eo-Bth">
                                         <rect key="frame" x="0.0" y="624" width="374" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="ql5-ZT-N7p"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="2" backgroundImage="Rectangle">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qnh-Nk-IRE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVw-Hl-IRe">
+                                        <rect key="frame" x="0.0" y="714" width="374" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="ueD-qr-2mT"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="True" backgroundImage="Rectangle">
+                                        <state key="normal" title="3" backgroundImage="Rectangle">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QpT-P5-vxb"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbn-vQ-GyC">
-                                        <rect key="frame" x="0.0" y="714" width="374" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="fNm-VT-9Ox"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="False" backgroundImage="Rectangle">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hnj-5T-9c4"/>
                                         </connections>
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TXm-qh-7Xg">
@@ -91,11 +105,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="falseButton" destination="tbn-vQ-GyC" id="zyl-kL-AZf"/>
                         <outlet property="progressBar" destination="TXm-qh-7Xg" id="toO-HN-YAr"/>
                         <outlet property="questionLabel" destination="rSI-li-mhO" id="0VT-4H-S2A"/>
                         <outlet property="scoreLabel" destination="ztj-o3-VRZ" id="svM-Wh-AwR"/>
-                        <outlet property="trueButton" destination="oVw-Hl-IRe" id="UBW-MZ-fCj"/>
+                        <outletCollection property="buttons" destination="E2Y-im-XuK" collectionClass="NSMutableArray" id="TZJ-20-98T"/>
+                        <outletCollection property="buttons" destination="o8P-eo-Bth" collectionClass="NSMutableArray" id="dG8-Ja-Cis"/>
+                        <outletCollection property="buttons" destination="oVw-Hl-IRe" collectionClass="NSMutableArray" id="5EC-PM-Enf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
