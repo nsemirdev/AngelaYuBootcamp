@@ -69,7 +69,6 @@
 				AD7631E822FC64AB00C6E71B /* View */,
 				AD7631E722FC64A100C6E71B /* Controller */,
 				AD7631DC22FC5E8300C6E71B /* Assets.xcassets */,
-				AD7631DE22FC5E8300C6E71B /* LaunchScreen.storyboard */,
 				AD7631E122FC5E8300C6E71B /* Info.plist */,
 			);
 			path = "Destini-iOS13";
@@ -87,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				AD7631D922FC5E7E00C6E71B /* Main.storyboard */,
+				AD7631DE22FC5E8300C6E71B /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
