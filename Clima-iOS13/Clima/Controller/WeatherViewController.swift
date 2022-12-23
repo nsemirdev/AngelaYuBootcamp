@@ -7,18 +7,24 @@
 //
 
 import UIKit
+import CoreLocation
 
-final class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
+final class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
     
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
         searchTextField.delegate = self
         WeatherManager.shared.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
     }
 
     @IBAction func searchPressed(_ sender: UIButton) {
@@ -48,7 +54,34 @@ final class WeatherViewController: UIViewController, UITextFieldDelegate, Weathe
     }
     
     func didUpdateWeather(with model: WeatherModel) {
-        print(model.conditionName)
+        DispatchQueue.main.async {
+            self.temperatureLabel.text = model.temperatureString
+            self.conditionImageView.image = UIImage(systemName: model.conditionName)
+            self.cityLabel.text = model.cityName
+        }
+    }
+    
+    func didFailWithError(with message: Error) {
+        print(message.localizedDescription)
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        print("im called")
+        locationManager.requestLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        print("test")
+        WeatherManager.shared.fetchWeather(lat: Int(location.coordinate.latitude), lon: Int(location.coordinate.longitude))
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+    
+    @IBAction func locationPressed(_ sender: UIButton) {
+        locationManager.requestLocation()
     }
 }
 

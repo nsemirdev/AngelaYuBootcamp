@@ -10,6 +10,7 @@ import Foundation
 
 protocol WeatherManagerDelegate {
     func didUpdateWeather(with model: WeatherModel)
+    func didFailWithError(with message: Error)
 }
 
 class WeatherManager {
@@ -24,17 +25,23 @@ class WeatherManager {
         performRequest(urlString: urlString)
     }
     
+    func fetchWeather(lat: Int, lon: Int) {
+        let urlString = "\(weatherURL)&lat=\(lat)&lon=\(lon)"
+        performRequest(urlString: urlString)
+    }
+    
     func performRequest(urlString: String) {
         guard let url = URL(string: urlString) else { return }
         
         URLSession(configuration: .default).dataTask(with: URLRequest(url: url)) { [weak self] data, response, error in
-            guard error == nil else { print(error!); return }
+            guard error == nil else {
+                self?.delegate?.didFailWithError(with: error!)
+                return
+            }
             guard let data else { return }
             guard let weatherModel = self?.parseJSON(weatherData: data) else { return }
             self?.delegate?.didUpdateWeather(with: weatherModel)
         }.resume()
-        
-        
     }
     
     func parseJSON(weatherData: Data) -> WeatherModel? {
