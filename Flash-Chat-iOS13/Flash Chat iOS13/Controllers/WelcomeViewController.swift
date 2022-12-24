@@ -18,7 +18,7 @@ class WelcomeViewController: UIViewController {
     }
 
     func animate() {
-        let string = "⚡️FlashChat"
+        let string = Constants.appName
         var i = 0.1
         titleLabel.text = ""
         for letter in string {
