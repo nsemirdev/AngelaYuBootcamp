@@ -12,4 +12,6 @@ struct Constants {
     static let registerSegue = "registerToChat"
     static let loginSegue = "loginToChat"
     static let appName = "⚡️FlashChat"
+    static let cellIdentifier = "ReusableCell"
+    static let messageCellNib = "MessageCell"
 }
